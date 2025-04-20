@@ -23,14 +23,42 @@ async function loadEverything(){
   renderStats(await fetchJSON(`/api/attendance/stats?date=${fecha}`));
 }
 
-function renderTable(rows){
+/*function renderTable(rows){
   tablaBody.innerHTML = rows.map(r => `
     <tr>
       <td>${r.name}</td>
       <td>${r.studentId}</td>
       <td>${r.present ? '✅' : '❌'}</td>
     </tr>`).join('');
+}*/
+
+function renderTable(rows){
+  tablaBody.innerHTML = rows.map(r => `
+    <tr>
+      <td>${r.name}</td>
+      <td>${r.studentId}</td>
+      <td>${r.present ? '✅' : '❌'}</td>
+      <td>
+        <button class="btn btn-outline-secondary btn-sm verQr"
+                data-id="${r.studentId}">
+          Ver QR
+        </button>
+      </td>
+    </tr>`).join('');
+
+  // Asigna el evento a todos los botones recién creados
+  document.querySelectorAll('.verQr').forEach(btn=>{
+    btn.addEventListener('click', e=>{
+      const id = e.currentTarget.dataset.id;
+      document.getElementById('qrImg').src = `/qr/${id}.png`;
+      bootstrap.Modal.getOrCreateInstance(
+        document.getElementById('qrModal')
+      ).show();
+    });
+  });
 }
+
+
 
 function renderStats({total,present,absent,percent}){
   statsDiv.innerHTML = `

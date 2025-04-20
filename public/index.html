@@ -25,7 +25,7 @@
       <div class="card-body p-0">
         <table class="table mb-0" id="tabla">
           <thead class="table-light">
-            <tr><th>Nombre</th><th>Matrícula</th><th>Asistencia</th></tr>
+            <tr><th>Nombre</th><th>Matrícula</th><th>Asistencia</th><th>QR</th></tr>
           </thead>
           <tbody></tbody>
         </table>
@@ -44,6 +44,25 @@
   <footer class="bg-dark text-white text-center py-2">
     Sistema de Asistencia QR – Desarrollado para proyecto escolar
   </footer>
+
+<!-- Modal QR -->
+<div class="modal fade" id="qrModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Código QR del Alumno</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img id="qrImg" src="" alt="QR" class="img-fluid">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS (solo necesario para el modal) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 
   <script src="js/main.js"></script>
 </body>
