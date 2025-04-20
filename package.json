@@ -1,0 +1,23 @@
+{
+  "name": "qr-asistencia",
+  "version": "1.0.0",
+  "description": "Sistema de asistencia mediante QR para proyecto escolar",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.4",
+    "exceljs": "^4.4.0",
+    "express": "^4.19.2",
+    "mysql2": "^3.9.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  }
+}
